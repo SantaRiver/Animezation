@@ -13,7 +13,7 @@ class CreateFailedJobsTable extends Migration
      */
     public function up()
     {
-        if (Schema::hasTable('password_resets')) {
+        if (!Schema::hasTable('password_resets')) {
             Schema::create(
                 'failed_jobs',
                 function (Blueprint $table) {
